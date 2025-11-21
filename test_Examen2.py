@@ -108,6 +108,21 @@ class TestVerificaListaCanciones(unittest.TestCase):
         resultado = self.obj.VerificaListaCanciones([None, None])
         self.assertFalse(resultado)
 
+class TestEncuentra(unittest.TestCase):
+    
+    def setUp(self):
+        """Se ejecuta antes de cada prueba para crear el objeto"""
+        self.obj = MiClase(5, 120, 12, ["Canción 1", "Canción 2"], [0.8, 0.9])
+    
+    def test_encuentra_true(self):
+        """Verifica que el método Encuentra retorna True cuando el elemento está en la lista"""
+        resultado = self.obj.Encuentra([1, 2, 3, 4, 5], 3)
+        self.assertTrue(resultado)
+    
+    def test_encuentra_false(self):
+        """Verifica que el método Encuentra retorna False cuando el elemento no está en la lista"""
+        resultado = self.obj.Encuentra([1, 2, 3, 4, 5], 10)
+        self.assertFalse(resultado)
 
 if __name__ == '__main__':
     unittest.main()
