@@ -71,10 +71,11 @@ class TestObtieneMasBailable(unittest.TestCase):
         resultado = self.obj.ObtieneMasBailable([5])
         self.assertEqual(resultado, 5)
 
+    # esta es la prueba modificada para que falle (Punto 3 parte III examen)
     def test_lista_desordenada(self):
         """Verifica que encuentra el mayor en lista desordenada"""
         resultado = self.obj.ObtieneMasBailable([3, 9, 1, 7, 2])
-        self.assertEqual(resultado, 9)
+        self.assertEqual(resultado, 7)
     
     def test_lista_con_numeros_negativos(self):
         """Prueba con números negativos"""
